@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Portfolio - Quick Preview</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #2c3e50; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem; text-align: center; margin-bottom: 2rem; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .header p { font-size: 1.2rem; opacity: 0.9; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+        .gallery-item { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
+        .gallery-item:hover { transform: translateY(-5px); }
+        .gallery-image { height: 200px; background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; }
+        .gallery-info { padding: 1.5rem; }
+        .gallery-title { font-size: 1.3rem; margin-bottom: 0.5rem; color: #2c3e50; }
+        .gallery-category { background: #3498db; color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem; display: inline-block; margin-bottom: 0.5rem; }
+        .gallery-description { color: #7f8c8d; font-size: 0.9rem; }
+        .instructions { background: #ecf0f1; padding: 2rem; border-radius: 15px; margin-top: 2rem; }
+        .instructions h2 { color: #2c3e50; margin-bottom: 1rem; }
+        .instructions ul { list-style-position: inside; color: #7f8c8d; }
+        .instructions li { margin-bottom: 0.5rem; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎨 Art Portfolio</h1>
+        <p>Sceneries, Locations & Portraits</p>
+    </div>
+    
+    <div class="container">
+        <h2>Gallery Preview</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <div class="gallery-image">Mountain Sunrise</div>
+                <div class="gallery-info">
+                    <h3 class="gallery-title">Mountain Sunrise</h3>
+                    <span class="gallery-category">scenery</span>
+                    <p class="gallery-description">A breathtaking view of mountains bathed in golden morning light.</p>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <div class="gallery-image">City Skyline</div>
+                <div class="gallery-info">
+                    <h3 class="gallery-title">City Skyline</h3>
+                    <span class="gallery-category">location</span>
+                    <p class="gallery-description">Urban architecture capturing the essence of modern city life.</p>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <div class="gallery-image">Elderly Gentleman</div>
+                <div class="gallery-info">
+                    <h3 class="gallery-title">Elderly Gentleman</h3>
+                    <span class="gallery-category">portrait</span>
+                    <p class="gallery-description">A character study capturing wisdom and life experience.</p>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <div class="gallery-image">Coastal Sunset</div>
+                <div class="gallery-info">
+                    <h3 class="gallery-title">Coastal Sunset</h3>
+                    <span class="gallery-category">scenery</span>
+                    <p class="gallery-description">Vibrant colors of the setting sun over ocean waves.</p>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <div class="gallery-image">Historic Town Square</div>
+                <div class="gallery-info">
+                    <h3 class="gallery-title">Historic Town Square</h3>
+                    <span class="gallery-category">location</span>
+                    <p class="gallery-description">Charming European town square with centuries of history.</p>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <div class="gallery-image">Young Artist</div>
+                <div class="gallery-info">
+                    <h3 class="gallery-title">Young Artist</h3>
+                    <span class="gallery-category">portrait</span>
+                    <p class="gallery-description">Capturing the creative spirit and dreams of youth.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h2>📋 How to Use Your Portfolio</h2>
+            <ul>
+                <li><strong>Main Website:</strong> Open <code>index.html</code> for the full-featured portfolio</li>
+                <li><strong>Add Your Images:</strong> Create an <code>images</code> folder and add your painting files</li>
+                <li><strong>Update Content:</strong> Edit <code>script.js</code> to update gallery data with your actual paintings</li>
+                <li><strong>Customize Colors:</strong> Modify CSS variables in <code>styles.css</code> to match your brand</li>
+                <li><strong>Contact Form:</strong> Update contact information in the HTML file</li>
+                <li><strong>Full Features:</strong> The main site includes filtering, modal views, smooth scrolling, and responsive design</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

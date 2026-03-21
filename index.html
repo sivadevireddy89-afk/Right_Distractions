@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Right Distractions — Fine Art Paintings</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1>Right Distractions</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#gallery" class="nav-link">Portfolio</a></li>
+                <li><a href="#tutorials" class="nav-link">Tutorials</a></li>
+                <li><a href="#blog" class="nav-link">Blog</a></li>
+                <li><a href="#shop" class="nav-link">Shop</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="featured-gallery" class="featured-gallery-section">
+            <div class="section-title">Featured Works</div>
+            <div class="slider-container">
+                <button class="slider-prev" onclick="slideGallery(-1)">&#10094;</button>
+                <div class="featured-gallery">
+                    <!-- Gallery items will be dynamically generated -->
+                </div>
+                <button class="slider-next" onclick="slideGallery(1)">&#10095;</button>
+            </div>
+            <div class="slider-dots">
+                <!-- Dot indicators will be dynamically generated -->
+            </div>
+        </section>
+
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Fine Art Paintings</h1>
+                <p class="hero-subtitle">Capturing the beauty of sceneries, locations, and portraits through artistic expression</p>
+                <a href="#gallery" class="cta-button">View Gallery</a>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery-section">
+            <div class="section-title">Portfolio</div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Works</button>
+                <button class="filter-btn" data-filter="scenery">Sceneries</button>
+                <button class="filter-btn" data-filter="location">Locations</button>
+                <button class="filter-btn" data-filter="portrait">Portraits</button>
+            </div>
+            <div class="gallery-grid">
+                <!-- Gallery items will be dynamically generated -->
+            </div>
+        </section>
+
+        <section id="tutorials" class="tutorial-section">
+            <div class="section-title">Tutorials</div>
+            <div class="tutorial-grid">
+                <div class="tutorial-category">
+                    <h3>Animals</h3>
+                    <ul class="tutorial-list">
+                        <li><a href="#" class="tutorial-link">Dogs</a></li>
+                        <li><a href="#" class="tutorial-link">Cats</a></li>
+                        <li><a href="#" class="tutorial-link">Wildlife</a></li>
+                        <li><a href="#" class="tutorial-link">Other Animals</a></li>
+                    </ul>
+                </div>
+                <div class="tutorial-category">
+                    <h3>Landscapes</h3>
+                    <ul class="tutorial-list">
+                        <li><a href="#" class="tutorial-link">Backgrounds</a></li>
+                        <li><a href="#" class="tutorial-link">Water</a></li>
+                        <li><a href="#" class="tutorial-link">Plant and Still Life</a></li>
+                    </ul>
+                </div>
+                <div class="tutorial-category">
+                    <h3>People</h3>
+                    <ul class="tutorial-list">
+                        <li><a href="#" class="tutorial-link">Portraits</a></li>
+                        <li><a href="#" class="tutorial-link">Beginners Guide</a></li>
+                        <li><a href="#" class="tutorial-link">Mini Demos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="blog-section">
+            <div class="section-title">The Latest From My Blog</div>
+            <div class="blog-grid">
+                <article class="blog-post">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop" alt="Mountain Sunset">
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">Mountain Sunset</h3>
+                        <p class="blog-excerpt">A breathtaking exploration of light and shadow in landscape painting...</p>
+                        <a href="#" class="blog-link">Read More</a>
+                    </div>
+                </article>
+                <article class="blog-post">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=300&fit=crop" alt="Coastal Scene">
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">Coastal Dreams</h3>
+                        <p class="blog-excerpt">Capturing the essence of water movement and reflection...</p>
+                        <a href="#" class="blog-link">Read More</a>
+                    </div>
+                </article>
+                <article class="blog-post">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=400&h=300&fit=crop" alt="Portrait Study">
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">Portrait Techniques</h3>
+                        <p class="blog-excerpt">Advanced methods for capturing personality in portraits...</p>
+                        <a href="#" class="blog-link">Read More</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="shop" class="shop-section">
+            <div class="section-title">Shop</div>
+            <div class="shop-grid">
+                <div class="shop-category">
+                    <h3>Limited Edition Giclee Prints</h3>
+                    <p>High-quality prints of original artworks</p>
+                    <a href="#" class="shop-link">View Collection</a>
+                </div>
+                <div class="shop-category">
+                    <h3>Mini Prints for Charity</h3>
+                    <p>Support a good cause with beautiful art</p>
+                    <a href="#" class="shop-link">Shop Now</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About the Artist</h2>
+                    <p>Landscape painting has not always been my favourite subject and something which has taken a lot of practice. First starting to paint landscape merely as a backdrop in wildlife paintings, I have discovered a love of painting sunsets, clouds and water.</p>
+                    <p>Being from Northern Ireland where the landscape around the North Antrim coast is stunning, I've had much inspiration and motivation to get better!</p>
+                    <p>I will hopefully continue to push my boundaries as an artist by exploring new themes and trying to get better at the subjects I find more difficult.</p>
+                </div>
+                <div class="artist-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">12+</span>
+                        <span class="stat-label">Artworks</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Categories</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2 class="section-title">Get in Touch</h2>
+                    <p>Interested in commissioning artwork or purchasing prints? I'd love to hear from you. Feel free to reach out through the form below or contact me directly.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-label">Email:</span>
+                            <span class="contact-value">hello@rightdistractions.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">Location:</span>
+                            <span class="contact-value">Northern Ireland</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/rightdistractions/" target="_blank" class="social-link">Instagram</a>
+                    <a href="#" target="_blank" class="social-link">Facebook</a>
+                    <a href="#" target="_blank" class="social-link">Patreon</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#gallery">Portfolio</a></li>
+                    <li><a href="#tutorials">Tutorials</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#shop">Shop</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul class="footer-links">
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Right Distractions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal for image viewing -->
+    <div class="modal" id="imageModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-image" id="modalImage"></div>
+            <div class="modal-info">
+                <h3 id="modalTitle"></h3>
+                <p id="modalDescription"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
