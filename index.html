@@ -3,8 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta Tags -->
+    <meta name="description" content="Right Distractions - Fine art paintings capturing sceneries, locations, and portraits. Commission custom artwork or browse our gallery of original paintings.">
+    <meta name="keywords" content="fine art paintings, custom portraits, landscape paintings, commissioned artwork, artist portfolio, original paintings">
+    <meta name="author" content="Right Distractions">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://rightdistractions.com">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rightdistractions.com">
+    <meta property="og:title" content="Right Distractions — Fine Art Paintings">
+    <meta property="og:description" content="Fine art paintings capturing sceneries, locations, and portraits. Commission custom artwork or browse our gallery.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1200&h=630&fit=crop">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://rightdistractions.com">
+    <meta property="twitter:title" content="Right Distractions — Fine Art Paintings">
+    <meta property="twitter:description" content="Fine art paintings capturing sceneries, locations, and portraits. Commission custom artwork or browse our gallery.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1200&h=630&fit=crop">
+    
+     <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+
+    <!-- Performance: Preconnect to external domains -->
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://lottie.host">
+    <link rel="preconnect" href="https://raw.githubusercontent.com">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    
+    <!-- Performance: Preload critical resources -->
+    <link rel="preload" href="styles.css" as="style">
+    
     <title>Right Distractions — Fine Art Paintings</title>
     <link rel="stylesheet" href="styles.css">
+
+     <!-- Performance: Async script loading -->
+    <script src="script.js" defer></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NQR70B5Y78"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NQR70B5Y78');
+</script>
+    
+    <!-- Service Worker Registration for caching -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((registration) => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch((error) => {
+                        console.log('SW registration failed: ', error);
+                    });
+            });
+        }
+    </script>
 </head>
 <body>
     <header class="header">
@@ -13,14 +77,23 @@
                 <h1>Right Distractions</h1>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#gallery" class="nav-link">Portfolio</a></li>
-                <li><a href="#tutorials" class="nav-link">Tutorials</a></li>
-                <li><a href="#blog" class="nav-link">Blog</a></li>
-                <li><a href="#shop" class="nav-link">Shop</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#home" class="nav-link" data-i18n="nav.home">Home</a></li>
+                <li><a href="#gallery" class="nav-link" data-i18n="nav.gallery">Gallery</a></li>
+                <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+                <li><a href="#for-sale" class="nav-link" data-i18n="nav.forsale">For Sale</a></li>
+                <li><a href="#testimonials" class="nav-link" data-i18n="nav.testimonials">Testimonials</a></li>
+                <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+                <li><a href="equipment.html" class="nav-link">Equipment</a></li>
             </ul>
+            <div class="language-switcher">
+                <select id="languageSelect" aria-label="Select language">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                    <option value="kn">ಕನ್ನಡ</option>
+                </select>
+            </div>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -30,120 +103,25 @@
     </header>
 
     <main>
-        <section id="featured-gallery" class="featured-gallery-section">
-            <div class="section-title">Featured Works</div>
-            <div class="slider-container">
-                <button class="slider-prev" onclick="slideGallery(-1)">&#10094;</button>
-                <div class="featured-gallery">
-                    <!-- Gallery items will be dynamically generated -->
-                </div>
-                <button class="slider-next" onclick="slideGallery(1)">&#10095;</button>
-            </div>
-            <div class="slider-dots">
-                <!-- Dot indicators will be dynamically generated -->
-            </div>
-        </section>
-
         <section id="home" class="hero">
             <div class="hero-content">
-                <h1 class="hero-title">Fine Art Paintings</h1>
-                <p class="hero-subtitle">Capturing the beauty of sceneries, locations, and portraits through artistic expression</p>
-                <a href="#gallery" class="cta-button">View Gallery</a>
+                <h1 class="hero-title" data-i18n="hero.title">Fine Art Paintings</h1>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">Capturing the beauty of sceneries, locations, and portraits through artistic expression</p>
+                <a href="#gallery" class="cta-button" data-i18n="hero.cta">View Gallery</a>
             </div>
         </section>
 
         <section id="gallery" class="gallery-section">
-            <div class="section-title">Portfolio</div>
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">All Works</button>
-                <button class="filter-btn" data-filter="scenery">Sceneries</button>
-                <button class="filter-btn" data-filter="location">Locations</button>
-                <button class="filter-btn" data-filter="portrait">Portraits</button>
-            </div>
-            <div class="gallery-grid">
-                <!-- Gallery items will be dynamically generated -->
-            </div>
-        </section>
-
-        <section id="tutorials" class="tutorial-section">
-            <div class="section-title">Tutorials</div>
-            <div class="tutorial-grid">
-                <div class="tutorial-category">
-                    <h3>Animals</h3>
-                    <ul class="tutorial-list">
-                        <li><a href="#" class="tutorial-link">Dogs</a></li>
-                        <li><a href="#" class="tutorial-link">Cats</a></li>
-                        <li><a href="#" class="tutorial-link">Wildlife</a></li>
-                        <li><a href="#" class="tutorial-link">Other Animals</a></li>
-                    </ul>
+            <div class="container">
+                <h2 class="section-title" data-i18n="gallery.title">Gallery</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all" data-i18n="gallery.filterAll">All Works</button>
+                    <button class="filter-btn" data-filter="scenery" data-i18n="gallery.filterScenery">Sceneries</button>
+                    <button class="filter-btn" data-filter="location" data-i18n="gallery.filterLocation">Locations</button>
+                    <button class="filter-btn" data-filter="portrait" data-i18n="gallery.filterPortrait">Portraits</button>
                 </div>
-                <div class="tutorial-category">
-                    <h3>Landscapes</h3>
-                    <ul class="tutorial-list">
-                        <li><a href="#" class="tutorial-link">Backgrounds</a></li>
-                        <li><a href="#" class="tutorial-link">Water</a></li>
-                        <li><a href="#" class="tutorial-link">Plant and Still Life</a></li>
-                    </ul>
-                </div>
-                <div class="tutorial-category">
-                    <h3>People</h3>
-                    <ul class="tutorial-list">
-                        <li><a href="#" class="tutorial-link">Portraits</a></li>
-                        <li><a href="#" class="tutorial-link">Beginners Guide</a></li>
-                        <li><a href="#" class="tutorial-link">Mini Demos</a></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="blog" class="blog-section">
-            <div class="section-title">The Latest From My Blog</div>
-            <div class="blog-grid">
-                <article class="blog-post">
-                    <div class="blog-image">
-                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop" alt="Mountain Sunset">
-                    </div>
-                    <div class="blog-content">
-                        <h3 class="blog-title">Mountain Sunset</h3>
-                        <p class="blog-excerpt">A breathtaking exploration of light and shadow in landscape painting...</p>
-                        <a href="#" class="blog-link">Read More</a>
-                    </div>
-                </article>
-                <article class="blog-post">
-                    <div class="blog-image">
-                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=300&fit=crop" alt="Coastal Scene">
-                    </div>
-                    <div class="blog-content">
-                        <h3 class="blog-title">Coastal Dreams</h3>
-                        <p class="blog-excerpt">Capturing the essence of water movement and reflection...</p>
-                        <a href="#" class="blog-link">Read More</a>
-                    </div>
-                </article>
-                <article class="blog-post">
-                    <div class="blog-image">
-                        <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=400&h=300&fit=crop" alt="Portrait Study">
-                    </div>
-                    <div class="blog-content">
-                        <h3 class="blog-title">Portrait Techniques</h3>
-                        <p class="blog-excerpt">Advanced methods for capturing personality in portraits...</p>
-                        <a href="#" class="blog-link">Read More</a>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section id="shop" class="shop-section">
-            <div class="section-title">Shop</div>
-            <div class="shop-grid">
-                <div class="shop-category">
-                    <h3>Limited Edition Giclee Prints</h3>
-                    <p>High-quality prints of original artworks</p>
-                    <a href="#" class="shop-link">View Collection</a>
-                </div>
-                <div class="shop-category">
-                    <h3>Mini Prints for Charity</h3>
-                    <p>Support a good cause with beautiful art</p>
-                    <a href="#" class="shop-link">Shop Now</a>
+                <div class="gallery-grid">
+                    <!-- Gallery items will be dynamically generated -->
                 </div>
             </div>
         </section>
@@ -152,105 +130,810 @@
             <div class="about-content">
                 <div class="about-text">
                     <h2 class="section-title">About the Artist</h2>
-                    <p>Landscape painting has not always been my favourite subject and something which has taken a lot of practice. First starting to paint landscape merely as a backdrop in wildlife paintings, I have discovered a love of painting sunsets, clouds and water.</p>
-                    <p>Being from Northern Ireland where the landscape around the North Antrim coast is stunning, I've had much inspiration and motivation to get better!</p>
-                    <p>I will hopefully continue to push my boundaries as an artist by exploring new themes and trying to get better at the subjects I find more difficult.</p>
+                    <p>Welcome to my artistic journey. Through my paintings, I strive to capture the essence of the world around us - from breathtaking landscapes and iconic locations to the intimate stories told through portraits.</p>
+                    <p>Each piece is a labor of love, created with traditional techniques and a modern perspective. My work explores the interplay of light, color, and emotion to create pieces that resonate with viewers on a personal level.</p>
+                    <div class="artist-stats">
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Paintings</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Exhibitions</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="artist-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">12+</span>
-                        <span class="stat-label">Artworks</span>
+                <div class="about-image">
+                   <iframe src="https://lottie.host/embed/7b838483-d975-4e73-9302-a7356e19cbc4/KSZSr32Bhe.lottie" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="contact-section">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 data-i18n="contact.title">Get in Touch</h3>
+                    <p data-i18n="contact.description">Interested in purchasing artwork or commissioning a piece? I'd love to hear from you.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <strong data-i18n="contact.email">Email:</strong> artist@portfolio.com
+                        </div>
+                        <div class="contact-item">
+                            <strong data-i18n="contact.phone">Phone:</strong> +1 (555) 123-4567
+                        </div>
+                        <div class="contact-item">
+                            <strong data-i18n="contact.studio">Studio:</strong> <span data-i18n="contact.studioValue">Available by appointment</span>
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">3</span>
-                        <span class="stat-label">Categories</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">5+</span>
-                        <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="whatsapp-container">
+                    <div class="whatsapp-card">
+                        <div class="whatsapp-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.6 6.32A7.85 7.85 0 0 0 12 4a7.94 7.94 0 0 0-6.88 12.1L4 20l4.05-1.06A7.93 7.93 0 0 0 20 12a7.85 7.85 0 0 0-2.4-5.68zM12 18a5.92 5.92 0 0 1-3.2-.94l-.23-.14-2.4.63.64-2.35-.15-.24A5.93 5.93 0 0 1 6 12a6 6 0 0 1 12 0 5.93 5.93 0 0 1-6 6zm3.4-4.6c-.18-.1-1.07-.53-1.24-.59-.16-.06-.28-.1-.4.1-.12.18-.46.59-.56.7-.1.13-.2.14-.38.05-1.15-.58-1.9-1.03-2.66-2.33-.2-.34-.03-.52.15-.7.15-.15.34-.38.46-.57.1-.2.05-.36-.02-.5-.07-.14-.4-1.07-.55-1.46-.14-.37-.29-.32-.4-.33-.1 0-.22-.02-.34-.02s-.3.04-.46.22c-.16.18-.6.59-.6 1.43 0 .85.6 1.66.68 1.78.09.12 1.2 1.83 2.9 2.57 1.7.73 1.7.49 2 .46.3-.03 1.07-.43 1.22-.85.15-.42.15-.78.1-.85z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3 data-i18n="contact.whatsappTitle">Chat on WhatsApp</h3>
+                        <p data-i18n="contact.whatsappDesc">Get instant replies to your questions about commissions, prints, or artwork!</p>
+                        <a href="https://wa.me/917411990920?text=Hi!%20I'm%20interested%20in%20your%20artwork.%20Can%20we%20chat?" target="_blank" class="whatsapp-btn">
+                            <span data-i18n="contact.whatsappBtn">💬 Message Me</span>
+                        </a>
+                        <div class="whatsapp-status">
+                            <span class="status-dot"></span>
+                            <span data-i18n="contact.whatsappStatus">Usually replies within an hour</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="contact-section">
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h2 class="section-title">Get in Touch</h2>
-                    <p>Interested in commissioning artwork or purchasing prints? I'd love to hear from you. Feel free to reach out through the form below or contact me directly.</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <span class="contact-label">Email:</span>
-                            <span class="contact-value">hello@rightdistractions.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-label">Location:</span>
-                            <span class="contact-value">Northern Ireland</span>
+        <section id="instagram" class="instagram-section">
+            <div class="container">
+                <div class="instagram-content">
+                    <div class="instagram-info">
+                        <h2 class="section-title" data-i18n="instagram.title">Follow on Instagram</h2>
+                        <p data-i18n="instagram.description">Discover more of my artwork and behind-the-scenes content on Instagram. Follow @rightdistractions for daily inspiration and updates on new paintings.</p>
+                        <a href="https://www.instagram.com/rightdistractions/" target="_blank" class="instagram-button">
+                        
+                            <span data-i18n="instagram.button">Follow @rightdistractions</span>
+                        </a>
+                    </div>
+                    <div class="instagram-preview">
+                        <div class="instagram-grid">
+                            <div class="instagram-item">
+                                <div class="instagram-placeholder">
+                                    <span>Latest Artwork</span>
+                                </div>
+                            </div>
+                            <div class="instagram-item">
+                                <div class="instagram-placeholder">
+                                    <span>Behind the Scenes</span>
+                                </div>
+                            </div>
+                            <div class="instagram-item">
+                                <div class="instagram-placeholder">
+                                    <span>Work in Progress</span>
+                                </div>
+                            </div>
+                            <div class="instagram-item">
+                                <div class="instagram-placeholder">
+                                    <span>Studio Life</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="contact-form-container">
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Send Message</button>
-                    </form>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Connect</h4>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/rightdistractions/" target="_blank" class="social-link">Instagram</a>
-                    <a href="#" target="_blank" class="social-link">Facebook</a>
-                    <a href="#" target="_blank" class="social-link">Patreon</a>
+    <!-- For Sale Ready - E-commerce Section -->
+    <section id="for-sale" class="for-sale-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="forsale.title">For Sale Ready</h2>
+                <p class="section-subtitle" data-i18n="forsale.subtitle">Original artwork available for purchase</p>
+            </div>
+            
+            <div class="artwork-grid">
+                <!-- Artwork Item 1 -->
+                <div class="artwork-card">
+                    <div class="artwork-image">
+                        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&h=600&fit=crop" alt="Golden Sunset">
+                        <span class="artwork-status available" data-i18n="forsale.available">Available</span>
+                    </div>
+                    <div class="artwork-info">
+                        <span class="artwork-id">Item #RD-2024-001</span>
+                        <h3 class="artwork-title">Golden Sunset</h3>
+                        <p class="artwork-description">Oil on canvas, 24" x 36"</p>
+                        <div class="artwork-price-row">
+                            <span class="artwork-price">₹4500</span>
+                            <button class="buy-btn" data-i18n="forsale.inquire">Inquire Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artwork Item 2 -->
+                <div class="artwork-card">
+                    <div class="artwork-image">
+                        <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=600&h=600&fit=crop" alt="Abstract Dreams">
+                        <span class="artwork-status available" data-i18n="forsale.available">Available</span>
+                    </div>
+                    <div class="artwork-info">
+                        <span class="artwork-id">Item #RD-2024-002</span>
+                        <h3 class="artwork-title">Abstract Dreams</h3>
+                        <p class="artwork-description">Acrylic on canvas, 20" x 20"</p>
+                        <div class="artwork-price-row">
+                            <span class="artwork-price">₹3200</span>
+                            <button class="buy-btn" data-i18n="forsale.inquire">Inquire Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artwork Item 3 -->
+                <div class="artwork-card">
+                    <div class="artwork-image">
+                        <img src="https://images.unsplash.com/photo-1549490349-8643362247b5?w=600&h=600&fit=crop" alt="Ocean Serenity">
+                        <span class="artwork-status sold" data-i18n="forsale.sold">Sold</span>
+                    </div>
+                    <div class="artwork-info">
+                        <span class="artwork-id">Item #RD-2024-003</span>
+                        <h3 class="artwork-title">Ocean Serenity</h3>
+                        <p class="artwork-description">Oil on canvas, 30" x 40"</p>
+                        <div class="artwork-price-row">
+                            <span class="artwork-price sold-price">₹3800</span>
+                            <button class="buy-btn" disabled data-i18n="forsale.sold">Sold</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artwork Item 4 -->
+                <div class="artwork-card">
+                    <div class="artwork-image">
+                        <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=600&h=600&fit=crop" alt="Mountain Mist">
+                        <span class="artwork-status available" data-i18n="forsale.available">Available</span>
+                    </div>
+                    <div class="artwork-info">
+                        <span class="artwork-id">Item #RD-2024-004</span>
+                        <h3 class="artwork-title">Mountain Mist</h3>
+                        <p class="artwork-description">Watercolor, 18" x 24"</p>
+                        <div class="artwork-price-row">
+                            <span class="artwork-price">₹2800</span>
+                            <button class="buy-btn" data-i18n="forsale.inquire">Inquire Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artwork Item 5 -->
+                <div class="artwork-card">
+                    <div class="artwork-image">
+                        <img src="https://images.unsplash.com/photo-1557672172-298e090bd0f1?w=600&h=600&fit=crop" alt="Urban Vibes">
+                        <span class="artwork-status available" data-i18n="forsale.available">Available</span>
+                    </div>
+                    <div class="artwork-info">
+                        <span class="artwork-id">Item #RD-2024-005</span>
+                        <h3 class="artwork-title">Urban Vibes</h3>
+                        <p class="artwork-description">Mixed media, 24" x 24"</p>
+                        <div class="artwork-price-row">
+                            <span class="artwork-price">₹4200</span>
+                            <button class="buy-btn" data-i18n="forsale.inquire">Inquire Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artwork Item 6 -->
+                <div class="artwork-card">
+                    <div class="artwork-image">
+                        <img src="https://images.unsplash.com/photo-1505909182942-e2f09aee3e89?w=600&h=600&fit=crop" alt="Floral Harmony">
+                        <span class="artwork-status available" data-i18n="forsale.available">Available</span>
+                    </div>
+                    <div class="artwork-info">
+                        <span class="artwork-id">Item #RD-2024-006</span>
+                        <h3 class="artwork-title">Floral Harmony</h3>
+                        <p class="artwork-description">Oil on canvas, 16" x 20"</p>
+                        <div class="artwork-price-row">
+                            <span class="artwork-price">₹2400</span>
+                            <button class="buy-btn" data-i18n="forsale.inquire">Inquire Now</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul class="footer-links">
-                    <li><a href="#gallery">Portfolio</a></li>
-                    <li><a href="#tutorials">Tutorials</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#shop">Shop</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Legal</h4>
-                <ul class="footer-links">
-                    <li><a href="#privacy">Privacy Policy</a></li>
-                    <li><a href="#terms">Terms of Service</a></li>
-                </ul>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials-section coming-soon-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="testimonials.title">Client Testimonials</h2>
+            <div class="coming-soon-content">
+                <div class="coming-soon-text-content">
+                    <h3 class="coming-soon-title">Coming Soon</h3>
+                    <p class="coming-soon-text">Client testimonials will be available here shortly. Stay tuned for feedback from our valued art collectors!</p>
+                </div>
+                <div class="coming-soon-image">
+                    <iframe src="https://lottie.host/embed/110b48ca-c9d1-4272-a52a-dbe7ae5ac6f9/Ry7KK4qLOk.lottie" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+                </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Right Distractions. All rights reserved.</p>
+    </section>
+
+     <!-- Visual Journey - Animated Slider -->
+    <section id="visual-journey" class="visual-journey-slider">
+        <div class="slider-header">
+            <h2 class="slider-section-title">Visual Journey</h2>
+            <p class="slider-section-subtitle">Explore moments captured in art</p>
         </div>
+        <div class="animated-slider">
+            <div class="slider-container">
+                <div class="slide active">
+                    <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1200&h=800&fit=crop" alt="Colorful Expressions">
+                    <div class="slide-content">
+                        <h3 class="slide-title">Colorful Expressions</h3>
+                        <p class="slide-subtitle">Vibrant paint tubes and artistic tools</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=1200&h=800&fit=crop" alt="Creative Process">
+                    <div class="slide-content">
+                        <h3 class="slide-title">Creative Process</h3>
+                        <p class="slide-subtitle">Where inspiration meets canvas</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=1200&h=800&fit=crop" alt="Artistic Tools">
+                    <div class="slide-content">
+                        <h3 class="slide-title">Artistic Tools</h3>
+                        <p class="slide-subtitle">The essentials of every painter</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=1200&h=800&fit=crop" alt="Oil Paint Magic">
+                    <div class="slide-content">
+                        <h3 class="slide-title">Oil Paint Magic</h3>
+                        <p class="slide-subtitle">Rich colors and textures</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=1200&h=800&fit=crop" alt="Watercolor Dreams">
+                    <div class="slide-content">
+                        <h3 class="slide-title">Watercolor Dreams</h3>
+                        <p class="slide-subtitle">Fluid and ethereal beauty</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://raw.githubusercontent.com/sivadevireddy89-afk/rightdistractions.github.io/main/Images/steve-johnson-Xx_d26R37E4-unsplash.jpg" alt="Brush Collection">
+                    <div class="slide-content">
+                        <h3 class="slide-title">Brush Collection</h3>
+                        <p class="slide-subtitle">Tools of the trade</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slider-controls">
+                <button class="slider-arrow slider-prev" aria-label="Previous slide">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                </button>
+                <button class="slider-arrow slider-next" aria-label="Next slide">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="slider-dots">
+                <button class="dot active" data-slide="0" aria-label="Go to slide 1"></button>
+                <button class="dot" data-slide="1" aria-label="Go to slide 2"></button>
+                <button class="dot" data-slide="2" aria-label="Go to slide 3"></button>
+                <button class="dot" data-slide="3" aria-label="Go to slide 4"></button>
+                <button class="dot" data-slide="4" aria-label="Go to slide 5"></button>
+                <button class="dot" data-slide="5" aria-label="Go to slide 6"></button>
+            </div>
+            
+            <div class="slider-progress">
+                <div class="progress-fill"></div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <p>&copy; 2026 Right Distractions. All rights reserved.</p>
     </footer>
 
     <!-- Modal for image viewing -->
     <div class="modal" id="imageModal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <div class="modal-image" id="modalImage"></div>
+            <div class="modal-media" id="modalMedia"></div>
             <div class="modal-info">
                 <h3 id="modalTitle"></h3>
                 <p id="modalDescription"></p>
             </div>
         </div>
     </div>
+ <!-- Scrolling Paint Brush -->
+    <div class="scroll-brush" id="scrollBrush">
+        <svg viewBox="0 0 120 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <!-- Wood handle gradient -->
+                <linearGradient id="woodGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#5D3A1A;stop-opacity:1" />
+                    <stop offset="30%" style="stop-color:#8B4513;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#A0522D;stop-opacity:1" />
+                    <stop offset="70%" style="stop-color:#8B4513;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#5D3A1A;stop-opacity:1" />
+                </linearGradient>
+                <!-- Metal ferrule gradient -->
+                <linearGradient id="metalGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#B8860B;stop-opacity:1" />
+                    <stop offset="20%" style="stop-color:#FFD700;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#FFF8DC;stop-opacity:1" />
+                    <stop offset="80%" style="stop-color:#FFD700;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#B8860B;stop-opacity:1" />
+                </linearGradient>
+                <!-- Bristle gradient -->
+                <linearGradient id="bristleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#D2B48C;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#F5DEB3;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#D2B48C;stop-opacity:1" />
+                </linearGradient>
+                <!-- Shadow filter -->
+                <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+                    <feOffset dx="3" dy="3" result="offsetblur"/>
+                    <feComponentTransfer>
+                        <feFuncA type="linear" slope="0.3"/>
+                    </feComponentTransfer>
+                    <feMerge> 
+                        <feMergeNode/>
+                        <feMergeNode in="SourceGraphic"/> 
+                    </feMerge>
+                </filter>
+            </defs>
+            
+            <!-- Brush handle -->
+            <rect x="45" y="10" width="30" height="100" rx="8" ry="8" fill="url(#woodGradient)" filter="url(#dropShadow)"/>
+            
+            <!-- Handle highlight -->
+            <rect x="50" y="15" width="8" height="90" rx="3" fill="#CD853F" opacity="0.5"/>
+            
+            <!-- Metal ferrule -->
+            <rect x="40" y="105" width="40" height="25" rx="3" ry="3" fill="url(#metalGradient)" filter="url(#dropShadow)"/>
+            
+            <!-- Ferrule ridges -->
+            <line x1="45" y1="108" x2="45" y2="127" stroke="#B8860B" stroke-width="1"/>
+            <line x1="50" y1="108" x2="50" y2="127" stroke="#B8860B" stroke-width="1"/>
+            <line x1="55" y1="108" x2="55" y2="127" stroke="#B8860B" stroke-width="1"/>
+            <line x1="60" y1="108" x2="60" y2="127" stroke="#B8860B" stroke-width="1"/>
+            <line x1="65" y1="108" x2="65" y2="127" stroke="#B8860B" stroke-width="1"/>
+            <line x1="70" y1="108" x2="70" y2="127" stroke="#B8860B" stroke-width="1"/>
+            <line x1="75" y1="108" x2="75" y2="127" stroke="#B8860B" stroke-width="1"/>
+            
+            <!-- Brush bristles with realistic curve -->
+            <path class="brush-tip" d="M42 128 Q38 155 45 175 Q55 190 60 185 Q70 175 78 175 Q85 155 78 128 Z" fill="url(#bristleGradient)" stroke="#C19A6B" stroke-width="1"/>
+            
+            <!-- Individual bristle lines -->
+            <g opacity="0.3" stroke="#8B7355" stroke-width="0.5">
+                <path d="M45 130 Q42 155 48 180"/>
+                <path d="M50 130 Q48 155 53 182"/>
+                <path d="M55 130 Q54 155 58 183"/>
+                <path d="M60 130 Q60 155 63 184"/>
+                <path d="M65 130 Q66 155 68 182"/>
+                <path d="M70 130 Q72 155 73 180"/>
+                <path d="M75 130 Q78 155 78 175"/>
+            </g>
+            
+            <!-- Wet paint on bristles - red blob -->
+            <ellipse cx="55" cy="140" rx="12" ry="8" fill="#E74C3C" opacity="0.9">
+                <animate attributeName="ry" values="8;9;8" dur="2s" repeatCount="indefinite"/>
+            </ellipse>
+            
+            <!-- Wet paint - blue blob -->
+            <ellipse cx="70" cy="150" rx="10" ry="6" fill="#3498DB" opacity="0.8">
+                <animate attributeName="ry" values="6;7;6" dur="2.3s" repeatCount="indefinite"/>
+            </ellipse>
+            
+            <!-- Wet paint - yellow blob -->
+            <ellipse cx="62" cy="165" rx="8" ry="5" fill="#F1C40F" opacity="0.85">
+                <animate attributeName="ry" values="5;6;5" dur="1.8s" repeatCount="indefinite"/>
+            </ellipse>
+            
+            <!-- Paint drip -->
+            <path d="M70 152 Q72 165 71 175" stroke="#3498DB" stroke-width="3" fill="none" opacity="0.6" stroke-linecap="round"/>
+            <circle cx="71" cy="177" r="3" fill="#3498DB" opacity="0.6"/>
+            
+            <!-- Highlight on bristles -->
+            <path d="M48 135 Q50 160 55 175" stroke="#FFF" stroke-width="2" fill="none" opacity="0.3" stroke-linecap="round"/>
+        </svg>
+    </div>
+
+    <!-- Contact Sidebar -->
+    <aside class="contact-sidebar">
+        <a href="#contact" class="sidebar-link sidebar-contact" title="Contact Us">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <span>Contact</span>
+        </a>
+        <a href="https://www.instagram.com/rightdistractions/" target="_blank" class="sidebar-link sidebar-instagram" title="Follow on Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+            <span>Instagram</span>
+        </a>
+        <a href="https://wa.me/917411990920?text=Hi!%20Supriya%20I'm%20interested%20in%20your%20artwork.%20Can%20we%20chat?" target="_blank" class="sidebar-link sidebar-whatsapp" title="Chat on WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.6 6.32A7.85 7.85 0 0 0 12 4a7.94 7.94 0 0 0-6.88 12.1L4 20l4.05-1.06A7.93 7.93 0 0 0 20 12a7.85 7.85 0 0 0-2.4-5.68zM12 18a5.92 5.92 0 0 1-3.2-.94l-.23-.14-2.4.63.64-2.35-.15-.24A5.93 5.93 0 0 1 6 12a6 6 0 0 1 12 0 5.93 5.93 0 0 1-6 6z"/>
+            </svg>
+            <span>WhatsApp</span>
+        </a>
+    </aside>
 
     <script src="script.js"></script>
+<!-- Multi-Language Support -->
+    <script>
+        const translations = {
+            en: {
+                nav: {
+                    home: "Home",
+                    gallery: "Gallery",
+                    forsale: "For Sale",
+                    about: "About",
+                    testimonials: "Testimonials",
+                    contact: "Contact"
+                },
+                hero: {
+                    title: "Fine Art Paintings",
+                    subtitle: "Capturing the beauty of sceneries, locations, and portraits through artistic expression",
+                    cta: "View Gallery"
+                },
+                gallery: {
+                    title: "Gallery",
+                    filterAll: "All Works",
+                    filterScenery: "Sceneries",
+                    filterLocation: "Locations",
+                    filterPortrait: "Portraits"
+                },
+                forsale: {
+                    title: "For Sale Ready",
+                    subtitle: "Original artwork available for purchase",
+                    available: "Available",
+                    sold: "Sold",
+                    inquire: "Inquire Now",
+                    pricePrefix: "£"
+                },
+                about: {
+                    title: "About the Artist",
+                    paintings: "Paintings",
+                    exhibitions: "Exhibitions",
+                    experience: "Years Experience"
+                },
+                testimonials: {
+                    title: "Client Testimonials",
+                    subtitle: "What clients have to say about my work"
+                },
+                contact: {
+                    title: "Get in Touch",
+                    description: "Interested in purchasing artwork or commissioning a piece? I'd love to hear from you.",
+                    email: "Email:",
+                    phone: "Phone:",
+                    studio: "Studio:",
+                    studioValue: "Available by appointment",
+                    whatsappTitle: "Chat on WhatsApp",
+                    whatsappDesc: "Get instant replies to your questions about commissions, prints, or artwork!",
+                    whatsappBtn: "💬 Message Me",
+                    whatsappStatus: "Usually replies within an hour"
+                },
+                instagram: {
+                    title: "Follow on Instagram",
+                    description: "Discover more of my artwork and behind-the-scenes content on Instagram. Follow @rightdistractions for daily inspiration and updates on new paintings.",
+                    button: "📷 Follow @rightdistractions"
+                },
+                footer: {
+                    copyright: "© 2024 Right Distractions. All rights reserved."
+                }
+            },
+            es: {
+                nav: {
+                    home: "Inicio",
+                    gallery: "Galería",
+                    forsale: "En Venta",
+                    about: "Acerca de",
+                    testimonials: "Testimonios",
+                    contact: "Contacto"
+                },
+                hero: {
+                    title: "Pinturas de Bellas Artes",
+                    subtitle: "Capturando la belleza de paisajes, lugares y retratos a través de la expresión artística",
+                    cta: "Ver Galería"
+                },
+                gallery: {
+                    title: "Galería",
+                    filterAll: "Todas las Obras",
+                    filterScenery: "Paisajes",
+                    filterLocation: "Lugares",
+                    filterPortrait: "Retratos"
+                },
+                forsale: {
+                    title: "Disponible para Venta",
+                    subtitle: "Obras de arte originales disponibles para comprar",
+                    available: "Disponible",
+                    sold: "Vendido",
+                    inquire: "Consultar Ahora",
+                    pricePrefix: "£"
+                },
+                about: {
+                    title: "Sobre el Artista",
+                    paintings: "Pinturas",
+                    exhibitions: "Exposiciones",
+                    experience: "Años de Experiencia"
+                },
+                testimonials: {
+                    title: "Testimonios de Clientes",
+                    subtitle: "Lo que los clientes dicen sobre mi trabajo"
+                },
+                contact: {
+                    title: "Ponte en Contacto",
+                    description: "¿Interesado en comprar obras de arte o encargar una pieza? Me encantaría saber de ti.",
+                    email: "Correo:",
+                    phone: "Teléfono:",
+                    studio: "Estudio:",
+                    studioValue: "Disponible con cita previa",
+                    whatsappTitle: "Chatear en WhatsApp",
+                    whatsappDesc: "¡Obtén respuestas instantáneas a tus preguntas sobre comisiones, impresiones o obras de arte!",
+                    whatsappBtn: "💬 Envíame un Mensaje",
+                    whatsappStatus: "Suele responder en una hora"
+                },
+                instagram: {
+                    title: "Sígueme en Instagram",
+                    description: "Descubre más de mi arte y contenido detrás de cámaras en Instagram. Sigue a @rightdistractions para inspiración diaria y actualizaciones.",
+                    button: "📷 Seguir @rightdistractions"
+                },
+                footer: {
+                    copyright: "© 2024 Right Distractions. Todos los derechos reservados."
+                }
+            },
+            fr: {
+                nav: {
+                    home: "Accueil",
+                    gallery: "Galerie",
+                    forsale: "À Vendre",
+                    about: "À Propos",
+                    testimonials: "Témoignages",
+                    contact: "Contact"
+                },
+                hero: {
+                    title: "Peintures des Beaux-Arts",
+                    subtitle: "Capturer la beauté des paysages, des lieux et des portraits à travers l'expression artistique",
+                    cta: "Voir la Galerie"
+                },
+                gallery: {
+                    title: "Galerie",
+                    filterAll: "Toutes les Œuvres",
+                    filterScenery: "Paysages",
+                    filterLocation: "Lieux",
+                    filterPortrait: "Portraits"
+                },
+                forsale: {
+                    title: "Prêt à Vendre",
+                    subtitle: "Œuvres d'art originales disponibles à l'achat",
+                    available: "Disponible",
+                    sold: "Vendu",
+                    inquire: "Renseigner Maintenant",
+                    pricePrefix: "£"
+                },
+                about: {
+                    title: "À Propos de l'Artiste",
+                    paintings: "Peintures",
+                    exhibitions: "Expositions",
+                    experience: "Années d'Expérience"
+                },
+                testimonials: {
+                    title: "Témoignages Clients",
+                    subtitle: "Ce que les clients disent de mon travail"
+                },
+                contact: {
+                    title: "Prenez Contact",
+                    description: "Intéressé par l'achat d'œuvres d'art ou la commande d'une pièce? J'aimerais avoir de vos nouvelles.",
+                    email: "Email:",
+                    phone: "Téléphone:",
+                    studio: "Atelier:",
+                    studioValue: "Sur rendez-vous",
+                    whatsappTitle: "Discuter sur WhatsApp",
+                    whatsappDesc: "Obtenez des réponses instantanées à vos questions sur les commissions, impressions ou œuvres d'art!",
+                    whatsappBtn: "💬 M'Envoyer un Message",
+                    whatsappStatus: "Répond généralement en une heure"
+                },
+                instagram: {
+                    title: "Suivez sur Instagram",
+                    description: "Découvrez plus de mon art et du contenu en coulisses sur Instagram. Suivez @rightdistractions pour l'inspiration quotidienne.",
+                    button: "📷 Suivre @rightdistractions"
+                },
+                footer: {
+                    copyright: "© 2024 Right Distractions. Tous droits réservés."
+                }
+            },
+            de: {
+                nav: {
+                    home: "Startseite",
+                    gallery: "Galerie",
+                    forsale: "Zu Verkaufen",
+                    about: "Über",
+                    testimonials: "Kundenbewertungen",
+                    contact: "Kontakt"
+                },
+                hero: {
+                    title: "Kunstmalereien",
+                    subtitle: "Einfangen der Schönheit von Landschaften, Orten und Porträts durch künstlerischen Ausdruck",
+                    cta: "Galerie ansehen"
+                },
+                gallery: {
+                    title: "Galerie",
+                    filterAll: "Alle Werke",
+                    filterScenery: "Landschaften",
+                    filterLocation: "Orte",
+                    filterPortrait: "Porträts"
+                },
+                forsale: {
+                    title: "Zum Verkauf Bereit",
+                    subtitle: "Original-Kunstwerke zum Kauf verfügbar",
+                    available: "Verfügbar",
+                    sold: "Verkauft",
+                    inquire: "Jetzt Anfragen",
+                    pricePrefix: "£"
+                },
+                about: {
+                    title: "Über den Künstler",
+                    paintings: "Gemälde",
+                    exhibitions: "Ausstellungen",
+                    experience: "Jahre Erfahrung"
+                },
+                testimonials: {
+                    title: "Kundenbewertungen",
+                    subtitle: "Was Kunden über meine Arbeit sagen"
+                },
+                contact: {
+                    title: "Kontakt aufnehmen",
+                    description: "Interessiert am Kauf von Kunstwerken oder an einer Auftragsarbeit? Ich würde mich freuen, von Ihnen zu hören.",
+                    email: "E-Mail:",
+                    phone: "Telefon:",
+                    studio: "Atelier:",
+                    studioValue: "Nach Vereinbarung",
+                    whatsappTitle: "Auf WhatsApp Chatten",
+                    whatsappDesc: "Erhalten Sie sofortige Antworten auf Ihre Fragen zu Aufträgen, Drucken oder Kunstwerken!",
+                    whatsappBtn: "💬 Nachricht senden",
+                    whatsappStatus: "Antwortet normalerweise innerhalb einer Stunde"
+                },
+                instagram: {
+                    title: "Folgen Sie auf Instagram",
+                    description: "Entdecken Sie mehr von meiner Kunst und Hintergrund-Inhalten auf Instagram. Folgen Sie @rightdistractions für tägliche Inspiration.",
+                    button: "📷 Folgen @rightdistractions"
+                },
+                footer: {
+                    copyright: "© 2024 Right Distractions. Alle Rechte vorbehalten."
+                }
+            },
+            kn: {
+                nav: {
+                    home: "ಮುಖಪುಟ",
+                    gallery: "ಗ್ಯಾಲರಿ",
+                    forsale: "ಮಾರಾಟಕ್ಕೆ",
+                    about: "ಕಲಾವಿದರ ಬಗ್ಗೆ",
+                    testimonials: "ಪ್ರಶಂಸಾಪತ್ರಗಳು",
+                    contact: "ಸಂಪರ್ಕ"
+                },
+                hero: {
+                    title: "ಸುಂದರ ಕಲೆ ಚಿತ್ರಗಳು",
+                    subtitle: "ಕಲಾತ್ಮಕ ಅಭಿವ್ಯಕ್ತಿಯ ಮೂಲಕ ಪ್ರಕೃತಿ ದೃಶ್ಯಗಳು, ಸ್ಥಳಗಳು ಮತ್ತು ಛಾಯಾಚಿತ್ರಗಳ ಸೌಂದರ್ಯವನ್ನು ಹಿಡಿದಿಡುವುದು",
+                    cta: "ಗ್ಯಾಲರಿ ವೀಕ್ಷಿಸಿ"
+                },
+                gallery: {
+                    title: "ಗ್ಯಾಲರಿ",
+                    filterAll: "ಎಲ್ಲಾ ಕೃತಿಗಳು",
+                    filterScenery: "ಪ್ರಕೃತಿ ದೃಶ್ಯಗಳು",
+                    filterLocation: "ಸ್ಥಳಗಳು",
+                    filterPortrait: "ಛಾಯಾಚಿತ್ರಗಳು"
+                },
+                forsale: {
+                    title: "ಮಾರಾಟಕ್ಕೆ ಸಿದ್ಧ",
+                    subtitle: "ಖರೀದಿಗೆ ಲಭ್ಯವಿರುವ ಮೂಲ ಕಲೆ ಕೃತಿಗಳು",
+                    available: "ಲಭ್ಯವಿದೆ",
+                    sold: "ಮಾರಾಟವಾಯಿತು",
+                    inquire: "ಈಗ ವಿಚಾರಿಸಿ",
+                    pricePrefix: "£"
+                },
+                about: {
+                    title: "ಕಲಾವಿದರ ಬಗ್ಗೆ",
+                    paintings: "ಚಿತ್ರಗಳು",
+                    exhibitions: "ಪ್ರದರ್ಶನಗಳು",
+                    experience: "ವರ್ಷಗಳ ಅನುಭವ"
+                },
+                testimonials: {
+                    title: "ಗ್ರಾಹಕರ ಪ್ರಶಂಸಾಪತ್ರಗಳು",
+                    subtitle: "ನನ್ನ ಕೆಲಸದ ಬಗ್ಗೆ ಗ್ರಾಹಕರು ಏನು ಹೇಳುತ್ತಾರೆ"
+                },
+                contact: {
+                    title: "ಸಂಪರ್ಕಿಸಿ",
+                    description: "ಕಲೆ ಕೃತಿಗಳನ್ನು ಖರೀದಿಸಲು ಅಥವಾ ಆಯೋಗಿಸಲು ಆಸಕ್ತಿ ಇದೆಯೇ? ನಿಮ್ಮಿಂದ ಕೇಳಲು ನಾನು ಬಯಸುತ್ತೇನೆ.",
+                    email: "ಇಮೇಲ್:",
+                    phone: "ದೂರವಾಣಿ:",
+                    studio: "ಸ್ಟುಡಿಯೋ:",
+                    studioValue: "ನೇಮಕಾತಿ ಮೂಲಕ ಲಭ್ಯ",
+                    whatsappTitle: "ವಾಟ್ಸಾಪ್‌ನಲ್ಲಿ ಚಾಟ್ ಮಾಡಿ",
+                    whatsappDesc: "ಆಯೋಗಗಳು, ಮುದ್ರಣಗಳು ಅಥವಾ ಕಲೆ ಕೃತಿಗಳ ಬಗ್ಗೆ ನಿಮ್ಮ ಪ್ರಶ್ನೆಗಳಿಗೆ ತಕ್ಷಣದ ಉತ್ತರಗಳನ್ನು ಪಡೆಯಿರಿ!",
+                    whatsappBtn: "💬 ಸಂದೇಶ ಕಳುಹಿಸಿ",
+                    whatsappStatus: "ಸಾಮಾನ್ಯವಾಗಿ ಒಂದು ಗಂಟೆಯಲ್ಲಿ ಉತ್ತರಿಸುತ್ತಾರೆ"
+                },
+                instagram: {
+                    title: "ಇನ್‌ಸ್ಟಾಗ್ರಾಮ್‌ನಲ್ಲಿ ಅನುಸರಿಸಿ",
+                    description: "ಇನ್‌ಸ್ಟಾಗ್ರಾಮ್‌ನಲ್ಲಿ ನನ್ನ ಕಲೆ ಮತ್ತು ಹಿಂದೆ-ದೃಶ್ಯ ವಿಷಯದನ್ನು ಹೆಚ್ಚು ಕಂಡುಹಿಡಿಯಿರಿ. ದೈನಂದಿನ ಸ್ಫೂರ್ತಿ ಮತ್ತು ನವೀನ ಪೇಂಟಿಂಗ್‌ಗಳ ನವೀಕರಣಗಳಿಗಾಗಿ @rightdistractions ಅನ್ನು ಅನುಸರಿಸಿ.",
+                    button: "📷 ಅನುಸರಿಸಿ @rightdistractions"
+                },
+                footer: {
+                    copyright: "© 2024 ರೈಟ್ ಡಿಸ್ಟ್ರಾಕ್ಷನ್ಸ್. ಎಲ್ಲಾ ಹಕ್ಕುಗಳು ಕಾಪಾಡಲ್ಪಟ್ಟವು."
+                }
+            }
+        };
+
+        // i18n functionality
+        const i18n = {
+            currentLang: localStorage.getItem('lang') || 'en',
+            
+            init() {
+                this.setLanguage(this.currentLang);
+                document.getElementById('languageSelect').value = this.currentLang;
+                
+                document.getElementById('languageSelect').addEventListener('change', (e) => {
+                    this.setLanguage(e.target.value);
+                });
+            },
+            
+            setLanguage(lang) {
+                this.currentLang = lang;
+                localStorage.setItem('lang', lang);
+                this.updateContent();
+            },
+            
+            updateContent() {
+                const t = translations[this.currentLang];
+                if (!t) return;
+                
+                // Update all elements with data-i18n attribute
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    const keys = key.split('.');
+                    let value = t;
+                    
+                    for (const k of keys) {
+                        value = value?.[k];
+                    }
+                    
+                    if (value) {
+                        el.textContent = value;
+                    }
+                });
+            }
+        };
+
+        // Initialize on DOM ready
+        document.addEventListener('DOMContentLoaded', () => {
+            i18n.init();
+        });
+        </script>
+        
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+    
 </body>
 </html>
+

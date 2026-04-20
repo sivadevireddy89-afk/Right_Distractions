@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Artwork Equipment - Discover the tools and materials I use to create my masterpieces. Shop professional art supplies.">
+    <meta name="keywords" content="art supplies, painting equipment, artist tools, professional art materials, brushes, canvas, paints">
+    <meta name="author" content="Right Distractions">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://rightdistractions.com/equipment">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rightdistractions.com/equipment">
+    <meta property="og:title" content="My Artwork Equipment — Right Distractions">
+    <meta property="og:description" content="Discover the tools and materials I use to create my masterpieces.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1200&h=630&fit=crop">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://rightdistractions.com/equipment">
+    <meta property="twitter:title" content="My Artwork Equipment — Right Distractions">
+    <meta property="twitter:description" content="Discover the tools and materials I use to create my masterpieces.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1200&h=630&fit=crop">
+    
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+
+    <!-- Performance: Preconnect to external domains -->
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    
+    <!-- Performance: Preload critical resources -->
+    <link rel="preload" href="styles.css" as="style">
+    
+    <title>My Artwork Equipment — Right Distractions</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .equipment-page {
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(120, 119, 198, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(255, 119, 198, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 50% 10%, rgba(119, 198, 255, 0.06) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 70%);
+            background-position: 25% 25%, 75% 75%, 50% 10%, 0 0;
+            background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+            background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+            background-attachment: fixed, fixed, fixed, fixed;
+        }
+        
+        .equipment-page .container::before {
+            display: none;
+        }
+        
+        /* Back to Top Button - Equipment Page */
+        .back-to-top {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NQR70B5Y78"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NQR70B5Y78');
+    </script>
+    
+    <!-- Service Worker Registration for caching -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((registration) => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch((error) => {
+                        console.log('SW registration failed: ', error);
+                    });
+            });
+        }
+    </script>
+</head>
+<body class="equipment-page">
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <a href="index.html"><h1>Right Distractions</h1></a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link" data-i18n="nav.home">Home</a></li>
+                <li><a href="index.html#gallery" class="nav-link" data-i18n="nav.gallery">Gallery</a></li>
+                <li><a href="index.html#about" class="nav-link" data-i18n="nav.about">About</a></li>
+                <li><a href="index.html#for-sale" class="nav-link" data-i18n="nav.forsale">For Sale</a></li>
+                <li><a href="index.html#testimonials" class="nav-link" data-i18n="nav.testimonials">Testimonials</a></li>
+                <li><a href="index.html#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+                <li><a href="equipment.html" class="nav-link active" data-i18n="nav.equipment">Equipment</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="language-switcher">
+                <select id="languageSelect" aria-label="Select language">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                    <option value="kn">ಕನ್ನಡ</option>
+                </select>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Equipment Hero Section -->
+        <section class="equipment-hero">
+            <div class="container">
+                <div class="equipment-hero-content">
+                    <h1 class="equipment-hero-title" data-i18n="equipment.heroTitle">My Artwork Equipment</h1>
+                    <p class="equipment-hero-subtitle" data-i18n="equipment.heroSubtitle">The tools and materials that help bring my creative vision to life</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Painting Supplies Section -->
+        <section class="equipment-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="equipment.paintingSupplies">Painting Supplies</h2>
+                <div class="equipment-grid compact-grid">
+                    <!-- Equipment Item 1 -->
+                    <div class="equipment-card compact">
+                        <div class="equipment-image">
+                            <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=300&h=200&fit=crop" alt="Professional Acrylic Paint Set">
+                        </div>
+                        <div class="equipment-info">
+                            <span class="equipment-category">Paints</span>
+                            <h3 class="equipment-name">Winsor & Newton Professional Acrylic Set</h3>
+                            <p class="equipment-description">High-quality acrylic paints with excellent pigment load and lightfastness.</p>
+                            <div class="equipment-price">₹7,499</div>
+                            <a href="https://www.amazon.in/s?k=Winsor+%26+Newton+Professional+Acrylic+Set" target="_blank" class="equipment-buy-btn small" data-i18n="equipment.buyNow">Buy Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Equipment Item 2 -->
+                    <div class="equipment-card compact">
+                        <div class="equipment-image">
+                            <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=300&h=200&fit=crop" alt="Premium Canvas Boards">
+                        </div>
+                        <div class="equipment-info">
+                            <span class="equipment-category">Canvas</span>
+                            <h3 class="equipment-name">Fredrix Premium Stretched Canvas</h3>
+                            <p class="equipment-description">Triple-primed canvas with medium texture for acrylic and oil.</p>
+                            <div class="equipment-price">₹3,799</div>
+                            <a href="https://www.amazon.in/s?k=Canvas+Board+Painting" target="_blank" class="equipment-buy-btn small" data-i18n="equipment.buyNow">Buy Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Equipment Item 3 -->
+                    <div class="equipment-card compact">
+                        <div class="equipment-image">
+                            <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=300&h=200&fit=crop" alt="Professional Brush Set">
+                        </div>
+                        <div class="equipment-info">
+                            <span class="equipment-category">Brushes</span>
+                            <h3 class="equipment-name">Princeton Artist Brush Set</h3>
+                            <p class="equipment-description">Synthetic bristle brushes with excellent snap. Set of 12.</p>
+                            <div class="equipment-price">₹2,999</div>
+                            <a href="https://www.amazon.in/s?k=Artist+Paint+Brush+Set" target="_blank" class="equipment-buy-btn small" data-i18n="equipment.buyNow">Buy Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Equipment Item 4 -->
+                    <div class="equipment-card compact">
+                        <div class="equipment-image">
+                            <img src="https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=300&h=200&fit=crop" alt="Easel">
+                        </div>
+                        <div class="equipment-info">
+                            <span class="equipment-category">Studio</span>
+                            <h3 class="equipment-name">MEEDEN Studio H-Frame Easel</h3>
+                            <p class="equipment-description">Solid beech wood easel. Holds canvases up to 48 inches.</p>
+                            <div class="equipment-price">₹10,999</div>
+                            <a href="https://www.amazon.in/s?k=Wooden+Artist+Easel" target="_blank" class="equipment-buy-btn small" data-i18n="equipment.buyNow">Buy Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Equipment Item 5 -->
+                    <div class="equipment-card compact">
+                        <div class="equipment-image">
+                            <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=300&h=200&fit=crop" alt="Palette Knife Set">
+                        </div>
+                        <div class="equipment-info">
+                            <span class="equipment-category">Tools</span>
+                            <h3 class="equipment-name">CONDA Palette Knife Set</h3>
+                            <p class="equipment-description">5-piece stainless steel palette knife set.</p>
+                            <div class="equipment-price">₹1,099</div>
+                            <a href="https://www.amazon.in/s?k=Palette+Knife+Set+Painting" target="_blank" class="equipment-buy-btn small" data-i18n="equipment.buyNow">Buy Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Equipment Item 6 -->
+                    <div class="equipment-card compact">
+                        <div class="equipment-image">
+                            <img src="https://images.unsplash.com/photo-1505909182942-e2f09aee3e89?w=300&h=200&fit=crop" alt="Watercolor Set">
+                        </div>
+                        <div class="equipment-info">
+                            <span class="equipment-category">Paints</span>
+                            <h3 class="equipment-name">Winsor & Newton Cotman Watercolor</h3>
+                            <p class="equipment-description">45 half-pan watercolor set with mixing palette.</p>
+                            <div class="equipment-price">₹5,699</div>
+                            <a href="https://www.amazon.in/s?k=Watercolor+Paint+Set+India" target="_blank" class="equipment-buy-btn small" data-i18n="equipment.buyNow">Buy Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Equipment Item 7 -->
+                    <div class="equipment-card compact">
+                        <div class="equipment-image">
+                            <img src="https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=300&h=200&fit=crop" alt="Drawing Pencils">
+                        </div>
+                        <div class="equipment-info">
+                            <span class="equipment-category">Drawing</span>
+                            <h3 class="equipment-name">Faber-Castell 9000 Graphite Set</h3>
+                            <p class="equipment-description">12-piece pencil set from 8B to 2H for sketching.</p>
+                            <div class="equipment-price">₹2,149</div>
+                            <a href="https://www.amazon.in/s?k=Faber+Castell+Drawing+Pencils" target="_blank" class="equipment-buy-btn small" data-i18n="equipment.buyNow">Buy Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Equipment Item 8 -->
+                    <div class="equipment-card compact">
+                        <div class="equipment-image">
+                            <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=300&h=200&fit=crop" alt="Sketchbook">
+                        </div>
+                        <div class="equipment-info">
+                            <span class="equipment-category">Paper</span>
+                            <h3 class="equipment-name">Strathmore 400 Series Sketchbook</h3>
+                            <p class="equipment-description">9x12 inch sketchbook with 100 sheets.</p>
+                            <div class="equipment-price">₹1,549</div>
+                            <a href="https://www.amazon.in/s?k=Artist+Sketchbook+A4+100+Sheets" target="_blank" class="equipment-buy-btn small" data-i18n="equipment.buyNow">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Tools Section -->
+        <section class="equipment-section additional-tools">
+            <div class="container">
+                <h2 class="section-title" data-i18n="equipment.additionalTools">Additional Tools</h2>
+                <div class="equipment-grid">
+                    <!-- Tool Item 1 -->
+                    <div class="equipment-card compact">
+                        <div class="equipment-image">
+                            <img src="https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?w=300&h=200&fit=crop" alt="Ruler Set">
+                        </div>
+                        <div class="equipment-info">
+                            <span class="equipment-category">Tools</span>
+                            <h3 class="equipment-name">Alvin Aluminum Ruler Set</h3>
+                            <p class="equipment-description">12", 18", and 24" aluminum rulers with cork backing.</p>
+                            <div class="equipment-price">₹1,349</div>
+                            <a href="https://www.amazon.in/s?k=Aluminum+Scale+Ruler+Set" target="_blank" class="equipment-buy-btn small" data-i18n="equipment.buyNow">Buy Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Tool Item 2 -->
+                    <div class="equipment-card compact">
+                        <div class="equipment-image">
+                            <img src="https://images.unsplash.com/photo-1596548438137-d51ea5c4485a?w=300&h=200&fit=crop" alt="Erasers">
+                        </div>
+                        <div class="equipment-info">
+                            <span class="equipment-category">Drawing</span>
+                            <h3 class="equipment-name">Prismacolor Eraser Set</h3>
+                            <p class="equipment-description">Kneaded, vinyl, and art gum erasers for different techniques.</p>
+                            <div class="equipment-price">₹749</div>
+                            <a href="https://www.amazon.in/s?k=Art+Eraser+Set+Kneaded" target="_blank" class="equipment-buy-btn small" data-i18n="equipment.buyNow">Buy Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Tool Item 3 -->
+                    <div class="equipment-card compact">
+                        <div class="equipment-image">
+                            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=300&h=200&fit=crop" alt="Fixative Spray">
+                        </div>
+                        <div class="equipment-info">
+                            <span class="equipment-category">Finishing</span>
+                            <h3 class="equipment-name">Winsor & Newton Fixative</h3>
+                            <p class="equipment-description">Workable fixative spray to protect pencil and charcoal drawings.</p>
+                            <div class="equipment-price">₹999</div>
+                            <a href="https://www.amazon.in/s?k=Drawing+Fixative+Spray" target="_blank" class="equipment-buy-btn small" data-i18n="equipment.buyNow">Buy Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Tool Item 4 -->
+                    <div class="equipment-card compact">
+                        <div class="equipment-image">
+                            <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=300&h=200&fit=crop" alt="Palette">
+                        </div>
+                        <div class="equipment-info">
+                            <span class="equipment-category">Tools</span>
+                            <h3 class="equipment-name">Masterson Sta-Wet Palette</h3>
+                            <p class="equipment-description">Acrylic paper palette that keeps paints wet for extended periods.</p>
+                            <div class="equipment-price">₹1,949</div>
+                            <a href="https://www.amazon.in/s?k=Stay+Wet+Palette+Acrylic" target="_blank" class="equipment-buy-btn small" data-i18n="equipment.buyNow">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Note Section -->
+        <section class="equipment-note">
+            <div class="container">
+                <div class="note-content">
+                    <div class="note-icon">💡</div>
+                    <h3 data-i18n="equipment.noteTitle">Why I Recommend These</h3>
+                    <p data-i18n="equipment.noteText">These are the exact tools and materials I use daily in my studio. I've carefully selected each item based on quality, durability, and value. As an Amazon Associate, I earn from qualifying purchases at no extra cost to you. Your support helps me continue creating art!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Right Distractions. All rights reserved.</p>
+        <p class="affiliate-note" data-i18n="equipment.affiliateNote">This page contains affiliate links. We may earn a small commission when you purchase through these links.</p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+    <!-- Multi-Language Support -->
+    <script>
+        const translations = {
+            en: {
+                equipment: {
+                    heroTitle: "My Artwork Equipment",
+                    heroSubtitle: "The tools and materials that help bring my creative vision to life",
+                    paintingSupplies: "Painting Supplies",
+                    additionalTools: "Additional Tools",
+                    buyNow: "Buy Now",
+                    noteTitle: "Why I Recommend These",
+                    noteText: "These are the exact tools and materials I use daily in my studio. I've carefully selected each item based on quality, durability, and value. As an Amazon Associate, I earn from qualifying purchases at no extra cost to you. Your support helps me continue creating art!",
+                    affiliateNote: "This page contains affiliate links. We may earn a small commission when you purchase through these links."
+                },
+                nav: {
+                    home: "Home",
+                    gallery: "Gallery",
+                    about: "About",
+                    forsale: "For Sale",
+                    testimonials: "Testimonials",
+                    contact: "Contact",
+                    equipment: "Equipment"
+                }
+            },
+            es: {
+                equipment: {
+                    heroTitle: "Mi Equipo de Arte",
+                    heroSubtitle: "Las herramientas y materiales que ayudan a dar vida a mi visión creativa",
+                    paintingSupplies: "Materiales de Pintura",
+                    additionalTools: "Herramientas Adicionales",
+                    buyNow: "Comprar",
+                    noteTitle: "Por Qué Recomiendo Estos",
+                    noteText: "Estas son las herramientas y materiales exactos que uso diariamente en mi estudio. He seleccionado cuidadosamente cada artículo basándome en calidad, durabilidad y valor. Como Asociado de Amazon, gano de compras calificadas sin costo adicional para ti. ¡Tu apoyo me ayuda a continuar creando arte!",
+                    affiliateNote: "Esta página contiene enlaces de afiliados. Podemos ganar una pequeña comisión cuando compras a través de estos enlaces."
+                },
+                nav: {
+                    home: "Inicio",
+                    gallery: "Galería",
+                    about: "Acerca de",
+                    forsale: "En Venta",
+                    testimonials: "Testimonios",
+                    contact: "Contacto",
+                    equipment: "Equipo"
+                }
+            },
+            fr: {
+                equipment: {
+                    heroTitle: "Mon Matériel d'Art",
+                    heroSubtitle: "Les outils et matériaux qui donnent vie à ma vision créative",
+                    paintingSupplies: "Fournitures de Peinture",
+                    additionalTools: "Outils Supplémentaires",
+                    buyNow: "Acheter",
+                    noteTitle: "Pourquoi Je Recommande Ceux-ci",
+                    noteText: "Ce sont les outils et matériaux exacts que j'utilise quotidiennement dans mon studio. J'ai soigneusement sélectionné chaque article en fonction de la qualité, de la durabilité et de la valeur. En tant qu'associé Amazon, je gagne des achats qualifiés sans coût supplémentaire pour vous. Votre soutien m'aide à continuer à créer de l'art!",
+                    affiliateNote: "Cette page contient des liens d'affiliation. Nous pouvons gagner une petite commission lorsque vous achetez via ces liens."
+                },
+                nav: {
+                    home: "Accueil",
+                    gallery: "Galerie",
+                    about: "À Propos",
+                    forsale: "À Vendre",
+                    testimonials: "Témoignages",
+                    contact: "Contact",
+                    equipment: "Équipement"
+                }
+            },
+            de: {
+                equipment: {
+                    heroTitle: "Meine Kunstausstattung",
+                    heroSubtitle: "Die Werkzeuge und Materialien, die meine kreative Vision zum Leben erwecken",
+                    paintingSupplies: "Malzubehör",
+                    additionalTools: "Zusätzliche Werkzeuge",
+                    buyNow: "Kaufen",
+                    noteTitle: "Warum Ich Diese Empfehle",
+                    noteText: "Dies sind die genauen Werkzeuge und Materialien, die ich täglich in meinem Atelier verwende. Ich habe jeden Artikel sorgfältig auf der Grundlage von Qualität, Haltbarkeit und Wert ausgewählt. Als Amazon-Partner verdiene ich an qualifizierten Käufen ohne zusätzliche Kosten für Sie. Ihre Unterstützung hilft mir, Kunst weiterhin zu schaffen!",
+                    affiliateNote: "Diese Seite enthält Affiliate-Links. Wir können eine kleine Provision verdienen, wenn Sie über diese Links kaufen."
+                },
+                nav: {
+                    home: "Startseite",
+                    gallery: "Galerie",
+                    about: "Über",
+                    forsale: "Zu Verkaufen",
+                    testimonials: "Referenzen",
+                    contact: "Kontakt",
+                    equipment: "Ausrüstung"
+                }
+            },
+            kn: {
+                equipment: {
+                    heroTitle: "ನನ್ನ ಕಲೆ ಉಪಕರಣಗಳು",
+                    heroSubtitle: "ನನ್ನ ಸೃಜನಾತ್ಮಕ ದೃಷ್ಟಿಕೋನಕ್ಕೆ ಜೀವ ತುಂಬಲು ಸಹಾಯ ಮಾಡುವ ಸಾಧನಗಳು ಮತ್ತು ಸಾಮಗ್ರಿಗಳು",
+                    paintingSupplies: "ಬಣ್ಣದ ಸಾಮಗ್ರಿಗಳು",
+                    additionalTools: "ಹೆಚ್ಚುವರಿ ಸಾಧನಗಳು",
+                    buyNow: "ಈಗ ಖರೀದಿಸಿ",
+                    noteTitle: "ನಾನು ಏಕೆ ಇವನ್ನು ಶಿಫಾರಸು ಮಾಡುತ್ತೇನೆ",
+                    noteText: "ಇವು ನನ್ನ ಸ್ಟುಡಿಯೋದಲ್ಲಿ ದಿನನಿತ್ಯ ಬಳಸುವ ನಿಖರವಾದ ಸಾಧನಗಳು ಮತ್ತು ಸಾಮಗ್ರಿಗಳು. ಗುಣಮಟ್ಟ, ಟಿಕಾವುಟಿ ಮತ್ತು ಮೌಲ್ಯದ ಆಧಾರದ ಮೇಲೆ ಪ್ರತಿ ವಸ್ತುವನ್ನು ಜಾಗರೂಕತೆಯಿಂದ ಆಯ್ಕೆ ಮಾಡಿದ್ದೇನೆ. ಅಮೆಜಾನ್ ಅಸೋಸಿಯೇಟ್ ಆಗಿ, ನಿಮಗೆ ಯಾವುದೇ ಅತಿರಿಕ್ತ ವೆಚ್ಚವಿಲ್ಲದೆ ಅರ್ಹ ಖರೀದಿಗಳಿಂದ ಗಳಿಸುತ್ತೇನೆ. ನಿಮ್ಮ ಬೆಂಬಲ ನನಗೆ ಕಲೆ ರಚಿಸುವುದನ್ನು ಮುಂದುವರಿಸಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ!",
+                    affiliateNote: "ಈ ಪುಟದಲ್ಲಿ ಅಂಗೀಕಾರಿತ ಲಿಂಕ್‌ಗಳಿವೆ. ಈ ಲಿಂಕ್‌ಗಳ ಮೂಲಕ ನೀವು ಖರೀದಿಸಿದಾಗ ನಾವು ಸಣ್ಣ ಕಮಿಷನ್ ಗಳಿಸಬಹುದು."
+                },
+                nav: {
+                    home: "ಮುಖಪುಟ",
+                    gallery: "ಗ್ಯಾಲರಿ",
+                    about: "ಬಗ್ಗೆ",
+                    forsale: "ಮಾರಾಟಕ್ಕೆ",
+                    testimonials: "ಪ್ರಶಂಸೆಗಳು",
+                    contact: "ಸಂಪರ್ಕ",
+                    equipment: "ಉಪಕರಣಗಳು"
+                }
+            }
+        };
+
+        const i18n = {
+            currentLang: localStorage.getItem('language') || 'en',
+            
+            init() {
+                this.setLanguage(this.currentLang);
+                const langSelect = document.getElementById('languageSelect');
+                if (langSelect) {
+                    langSelect.value = this.currentLang;
+                    langSelect.addEventListener('change', (e) => {
+                        this.setLanguage(e.target.value);
+                    });
+                }
+            },
+            
+            setLanguage(lang) {
+                this.currentLang = lang;
+                localStorage.setItem('language', lang);
+                this.updateContent();
+            },
+            
+            updateContent() {
+                const t = translations[this.currentLang];
+                if (!t) return;
+                
+                // Update all elements with data-i18n attribute
+                document.querySelectorAll('[data-i18n]').forEach(element => {
+                    const keys = element.getAttribute('data-i18n').split('.');
+                    let value = t;
+                    for (const key of keys) {
+                        value = value?.[key];
+                    }
+                    if (value) {
+                        element.textContent = value;
+                    }
+                });
+            }
+        };
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            i18n.init();
+        });
+    </script>
+    <script>
+        // Back to Top Button - Equipment Page
+        (function() {
+            const backToTopBtn = document.getElementById('backToTop');
+            if (!backToTopBtn) return;
+            
+            function toggleButton() {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.classList.remove('visible');
+                }
+            }
+            
+            window.addEventListener('scroll', toggleButton);
+            
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Check initial position
+            toggleButton();
+        })();
+    </script>
+</body>
+</html>
